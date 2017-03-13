@@ -8,6 +8,19 @@
 using namespace System;
 using namespace std;
 
+void  printSidesValues(triangle trg)
+	{
+	    cout<<" sides of the triangle: ";
+		for ( int i=0; i<3;i++)
+		{
+			if (i!=0)
+			cout<<"-";
+			cout<<trg.getSides(i);
+		}
+		cout<<"\n";
+	}
+
+
 int main(array<System::String ^> ^args)
 {
 	//int n;
@@ -37,7 +50,7 @@ int main(array<System::String ^> ^args)
 		
 		
 			
-}*/
+}*/ 
 	   arrayTriangle[0].setSides(1,1,1);
 	   arrayTriangle[1].setSides(5,4,3);
 	   arrayTriangle[2].setSides(9,5,5);
@@ -45,7 +58,7 @@ int main(array<System::String ^> ^args)
 	for ( int i=0; i<n;i++)
 	{
 		cout<<"Triangle "<<i+1;
-		arrayTriangle[i].printSidesValues();
+		printSidesValues(arrayTriangle[i]);
 	}
 
 	select:
@@ -78,12 +91,14 @@ int main(array<System::String ^> ^args)
 		float percent;
 		cin >> percent;
 		arrayTriangle[selectedT-1].Increase(percent);
+		printSidesValues(arrayTriangle[selectedT-1]);
 	} else if (selectedA == 2)
 	{
 		float percent;
 		cout << "Enter persent \n";
 		cin >> percent;
 		arrayTriangle[selectedT-1].Decrease(percent);
+		printSidesValues(arrayTriangle[selectedT-1]);
 	} else if (selectedA == 3)
 	{
 		char side;
@@ -92,10 +107,27 @@ int main(array<System::String ^> ^args)
 		cout<<arrayTriangle[selectedT-1].mediumLine(side)<<"\n";
 	} else if (selectedA == 4)
 	{
-		arrayTriangle[selectedT-1].angles();
+		for(int i=0; i<3;i++)
+		{
+			cout<<arrayTriangle[selectedT-1].angles(i)<<"\n";
+		}
 	} else if (selectedA == 5)
 	{
-		arrayTriangle[selectedT-1].type();
+		if (arrayTriangle[selectedT-1].type()==1)
+		{
+			cout<<"right triangle\n";
+		}
+		else
+		{ 
+			if(arrayTriangle[selectedT-1].type()==2)
+			{
+				cout<<"blunt triangle\n";
+			}
+			else 
+			{
+				cout<<"sharp triangle\n";
+			}
+		}
 	}
 
 	char tryAgain;

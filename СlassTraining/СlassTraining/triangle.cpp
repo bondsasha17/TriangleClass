@@ -5,7 +5,7 @@
 using namespace std;
 
 
-	triangle::triangle(void)
+	triangle::triangle()
 	{
 	}
 	triangle::triangle( float _a,  float _b, float _c)
@@ -19,27 +19,41 @@ using namespace std;
 			b=_b;
 			c=_c;
 	 }
-	
-	float triangle::angles()
-	{
-		float alpha;
-		float betta;
-		float gamma;
-		alpha = acos((b*b+c*c-a*a)/(2*b*c));
-		betta = acos((a*a+c*c-b*b)/(2*c*a));
-		gamma = acos((b*b+a*a-c*c)/(2*b*a));
-		cout<< "Angles: "<<alpha<<", "<<betta<<", "<<gamma<<".\n";
-		return 0;
 
+	
+	float  triangle::angles(int i)
+	{
+		switch(i) {
+		case 0: return acos((b*b+c*c-a*a)/(2*b*c));;
+		case 1: return acos((a*a+c*c-b*b)/(2*c*a));;
+		case 2: return acos((b*b+a*a-c*c)/(2*b*a));;
+
+		}
+	}
+	void triangle::angles(float* angles)
+	{
+		angles[0]= acos((b*b+c*c-a*a)/(2*b*c));
+		angles[1]= acos((a*a+c*c-b*b)/(2*c*a));
+		angles[2]= acos((b*b+a*a-c*c)/(2*b*a));
 	}
 
-	float* triangle:: getSides() 
+	float  triangle::getSides(int i)
 	{
-		float *sides=new float[3];
+		switch(i) {
+		case 0: return a;
+		case 1: return b;
+		case 2: return c;
+
+		}
+	}
+
+	void triangle:: getSides(float* sides) 
+	{
+		
 		sides[0]=a;
 		sides[1]=b;
 		sides[2]=c;	   
-		return sides;
+		
 	};
 	bool triangle::isValid()
 	{
@@ -51,31 +65,19 @@ using namespace std;
 	}
 
 
-	void  triangle::printSidesValues()
-	{
-	    cout<<" sides of the triangle: ";
-		for ( int i=0; i<3;i++)
-		{
-			if (i!=0)
-			cout<<"-";
-			cout<<getSides()[i];
-		}
-		cout<<"\n";
-	}
-
 	float triangle::mediumLine(char x)
     {
 		if (x =='a')
 		{
-			return (getSides()[0])/2;
+			return (a)/2;
 		}
 		if (x =='b')
 		{
-			return (getSides()[1])/2;
+			return (b)/2;
 		}
 		if (x =='c')
 		{
-			return (getSides()[2])/2;
+			return (c)/2;
 		}
 	}
 	void triangle::Increase( float p)
@@ -83,29 +85,29 @@ using namespace std;
 		a=a+(a*p)/100.0;
 		b=b+(b*p)/100.0;
 		c=c+(c*p)/100.0;
-		printSidesValues();
+		//printSidesValues();
 	}
 	void triangle::Decrease(float p)
 	{
 		a=a-(a*p)/100.0;
 		b=b-(b*p)/100.0;
 		c=c-(c*p)/100.0;
-		printSidesValues();
+		//printSidesValues();
 	}
 
-	void triangle::type()
+	int triangle::type()
 
 	{
 		if(a*a+b*b==c*c || a*a+c*c==b*b || c*c+b*b==a*a)
-			cout<<"right triangle\n";
+			return 1 ;//прямоугольный
 		else
 		{
 			if(a*a+b*b<c*c || a*a+c*c<b*b || c*c+b*b<a*a)
-				cout<<"blunt triangle\n";
+				return 2;//"blunt triangle\n";
 			else
 			{
 				if(a*a+b*b>c*c || a*a+c*c>b*b || c*c+b*b>a*a)
-					cout<<"sharp triangle\n";
+					return 3;// #
 			}
 		}
 		
