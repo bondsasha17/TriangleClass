@@ -23,14 +23,14 @@ void  printSidesValues(triangle trg)
 
 int main(array<System::String ^> ^args)
 {
-	//int n;
-    //cout<<"How many tiangles do you  want to create?\n";
-	//cin>>n;
-	int n=3;
+	int n;
+    cout<<"How many tiangles do you  want to create?\n";
+	cin>>n;
+	 int *count = new int[n];
 	triangle *arrayTriangle;
 	arrayTriangle = new triangle[n];
 	
-	/*for ( int i=0; i<n;i++)
+	for ( int i=0; i<n;i++)
 	{
 		 float a;
 		 float b;
@@ -48,12 +48,12 @@ int main(array<System::String ^> ^args)
 		}
 		arrayTriangle[i].setSides(a,b,c);
 		
-		
+		count[i]=i;
 			
-}*/ 
-	   arrayTriangle[0].setSides(1,1,1);
+} 
+	  /* arrayTriangle[0].setSides(1,1,1);
 	   arrayTriangle[1].setSides(5,4,3);
-	   arrayTriangle[2].setSides(9,5,5);
+	   arrayTriangle[2].setSides(9,5,5);*/
 
 	for ( int i=0; i<n;i++)
 	{
@@ -63,11 +63,11 @@ int main(array<System::String ^> ^args)
 
 	select:
 	int selectedT;
-	cout<<"Choose a triangle (1, 2 or 3)\n";
+	cout<<"Choose a triangle (1..."<<n<<")\n";
 	cin >> selectedT;
-	if (selectedT != 1 && selectedT != 2 && selectedT != 3)
+	if (selectedT != 1 && selectedT != 2 && selectedT != 3 && selectedT != 4 && selectedT != 5)
 	{
-		cout<<"Enter 1, 2 or 3 to select a triangle\n";
+		cout<<"Enter 1, 2 or else to select a triangle\n";
 		goto select;
 	}
 

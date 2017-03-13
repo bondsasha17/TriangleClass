@@ -21,7 +21,7 @@ using namespace std;
 	 }
 
 	
-	float  triangle::angles(int i)
+	float  triangle::angles(int i)//метод
 	{
 		switch(i) {
 		case 0: return acos((b*b+c*c-a*a)/(2*b*c));;

@@ -1,7 +1,7 @@
-﻿Построение начато 13.03.2017 14:46:49.
+﻿Построение начато 13.03.2017 15:47:11.
      1>Проект "C:\Users\ДОМ\Documents\GitHub\TriangleClass\СlassTraining\СlassTraining\СlassTraining.vcxproj" в узле 2 (целевые объекты build).
      1>InitializeBuildStatus:
-         Создание "Debug\СlassTraining.unsuccessfulbuild", так как было задано "AlwaysCreate".
+         Создание "Debug\TriangleClassOOP.unsuccessfulbuild", так как было задано "AlwaysCreate".
        GenerateTargetFrameworkMonikerAttribute:
        Целевой объект "GenerateTargetFrameworkMonikerAttribute" пропускается, так как все выходные файлы актуальны по отношению к входным.
        ClCompile:
@@ -12,14 +12,14 @@
          Для всех выходных данных обновления не требуется.
        Link:
          Для всех выходных данных обновления не требуется.
-         СlassTraining.vcxproj -> C:\Users\ДОМ\Documents\GitHub\TriangleClass\СlassTraining\Debug\СlassTraining.exe
+         СlassTraining.vcxproj -> C:\Users\ДОМ\Documents\GitHub\TriangleClass\СlassTraining\Debug\TriangleClassOOP.exe
        MetaGen:
        Целевой объект "MetaGen" пропускается, так как все выходные файлы актуальны по отношению к входным.
        FinalizeBuildStatus:
-         Файл "Debug\СlassTraining.unsuccessfulbuild" удаляется.
-         Обращение к "Debug\СlassTraining.lastbuildstate".
+         Файл "Debug\TriangleClassOOP.unsuccessfulbuild" удаляется.
+         Обращение к "Debug\TriangleClassOOP.lastbuildstate".
      1>Построение проекта "C:\Users\ДОМ\Documents\GitHub\TriangleClass\СlassTraining\СlassTraining\СlassTraining.vcxproj" завершено (целевые объекты build).
 
 Построение успешно завершено.
 
-Затраченное время: 00:00:01.06
+Затраченное время: 00:00:00.59
