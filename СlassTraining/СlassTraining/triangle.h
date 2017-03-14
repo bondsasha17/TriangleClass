@@ -1,5 +1,8 @@
 #pragma once
 
+const int TRIANGLE_90=1;
+const int TRIANGLE_B=2;
+const int TRIANGLE_S=3;
 
  class triangle
 {

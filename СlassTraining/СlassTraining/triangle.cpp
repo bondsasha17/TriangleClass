@@ -21,12 +21,12 @@ using namespace std;
 	 }
 
 	
-	float  triangle::angles(int i)//метод
+	float  triangle::angles(int i)
 	{
 		switch(i) {
-		case 0: return acos((b*b+c*c-a*a)/(2*b*c));;
-		case 1: return acos((a*a+c*c-b*b)/(2*c*a));;
-		case 2: return acos((b*b+a*a-c*c)/(2*b*a));;
+		case 0: return acos((b*b+c*c-a*a)/(2*b*c));
+		case 1: return acos((a*a+c*c-b*b)/(2*c*a));
+		case 2: return acos((b*b+a*a-c*c)/(2*b*a));
 
 		}
 	}
@@ -58,7 +58,7 @@ using namespace std;
 	bool triangle::isValid()
 	{
 	
-		if(a==0 || b==0 || c==0 || a+b<=c || a+c<=b || c+b<=a)
+		if(a<=0 || b<=0 || c<=0 || a+b<=c || a+c<=b || c+b<=a)
 			 return false;
 		else 
 			return true;
@@ -85,29 +85,29 @@ using namespace std;
 		a=a+(a*p)/100.0;
 		b=b+(b*p)/100.0;
 		c=c+(c*p)/100.0;
-		//printSidesValues();
+		
 	}
 	void triangle::Decrease(float p)
 	{
 		a=a-(a*p)/100.0;
 		b=b-(b*p)/100.0;
 		c=c-(c*p)/100.0;
-		//printSidesValues();
+		
 	}
 
 	int triangle::type()
 
 	{
 		if(a*a+b*b==c*c || a*a+c*c==b*b || c*c+b*b==a*a)
-			return 1 ;//прямоугольный
+			return TRIANGLE_90 ;//прямоугольный
 		else
 		{
 			if(a*a+b*b<c*c || a*a+c*c<b*b || c*c+b*b<a*a)
-				return 2;//"blunt triangle\n";
+				return TRIANGLE_B;//blunt triangle;
 			else
 			{
 				if(a*a+b*b>c*c || a*a+c*c>b*b || c*c+b*b>a*a)
-					return 3;// #
+					return TRIANGLE_S;// #
 			}
 		}
 		
